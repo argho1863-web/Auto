@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.auto">
+
+    <!--
+        Permissions required for Wi‑Fi automation. ACCESS_WIFI_STATE and CHANGE_WIFI_STATE
+        are required to query and request changes to the radio. From Android 10 onwards
+        apps can no longer toggle the Wi‑Fi radio directly; users must take action via
+        Settings or a panel. We still declare the permissions so we can request the
+        user to enable Wi‑Fi and to build network suggestions/specifiers.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--
+        NEARBY_WIFI_DEVICES is the replacement for the location permission on Android 13+.
+        It's used when scanning or requesting network suggestions when location is
+        not required for the rest of the app.
+    -->
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
+
+    <application
+        android:allowBackup="true"
+        android:label="AutoWifi"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Worker is registered in code; no explicit manifest entry needed unless
+             you want to use a BroadcastReceiver or Service. -->
+    </application>
+</manifest>
