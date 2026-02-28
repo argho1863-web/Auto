@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+*.apk
+*.aar
+
+# Local properties
+local.properties
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+
+# Android Studio
+gradle/wrapper/gradle-wrapper.jar
+
+# OS
+.DS_Store
+Thumbs.db
